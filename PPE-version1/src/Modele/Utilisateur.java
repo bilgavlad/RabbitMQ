@@ -33,15 +33,17 @@ public class Utilisateur {
 	@Column(nullable = false)
 	private String modifie_par;
 
+	public void addRoleAction(Role_Utilisateur nouveau) {
+		roles.add(nouveau);
+		nouveau.setUtilisateur(this);
+	}
+	
 	public Utilisateur() {
 		super();
 	}
 
-	public Utilisateur(int id_users, List<Role_Utilisateur> roles, String email, String nom, String prenom,
-			Date derniere_mise_a_jour, String modifie_par) {
+	public Utilisateur(String email, String nom, String prenom, Date derniere_mise_a_jour, String modifie_par) {
 		super();
-		this.id_users = id_users;
-		this.roles = roles;
 		this.email = email;
 		this.nom = nom;
 		this.prenom = prenom;

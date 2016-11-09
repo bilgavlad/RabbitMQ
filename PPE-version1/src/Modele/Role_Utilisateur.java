@@ -18,7 +18,7 @@ public class Role_Utilisateur {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_roles_user;
-	@ManyToOne @JoinColumn(name = "utlisateur_FK")
+	@ManyToOne @JoinColumn(name = "users_FK")
 	private Utilisateur utilisateur;
 	@ManyToOne @JoinColumn(name = "role_FK")
 	private Role role;
@@ -31,12 +31,8 @@ public class Role_Utilisateur {
 		super();
 	}
 
-	public Role_Utilisateur(int id_roles_user, Utilisateur utilisateur, Role role, Date derniere_mise_a_jour,
-			String modifie_par) {
+	public Role_Utilisateur(Date derniere_mise_a_jour, String modifie_par) {
 		super();
-		this.id_roles_user = id_roles_user;
-		this.utilisateur = utilisateur;
-		this.role = role;
 		this.derniere_mise_a_jour = derniere_mise_a_jour;
 		this.modifie_par = modifie_par;
 	}

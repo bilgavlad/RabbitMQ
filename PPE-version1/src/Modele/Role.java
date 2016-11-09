@@ -32,17 +32,23 @@ public class Role {
 	private String modifie_par;
 	@Column(nullable = false)
 	private String description;
+	
+	public void addRoleAction(Role_action nouveau) {
+		role_actions.add(nouveau);
+		nouveau.setRole(this);
+	}
+	
+	public void addRoleUtilisateur(Role_Utilisateur nouveau) {
+		role_users.add(nouveau);
+		nouveau.setRole(this);
+	}
 
 	public Role() {
 		super();
 	}
 
-	public Role(int id_role, List<Role_Utilisateur> role_users, List<Role_action> role_actions, String role,
-			Date derniere_mise_a_jour, String modifie_par, String description) {
+	public Role(String role, Date derniere_mise_a_jour, String modifie_par, String description) {
 		super();
-		this.id_role = id_role;
-		this.role_users = role_users;
-		this.role_actions = role_actions;
 		this.role = role;
 		this.derniere_mise_a_jour = derniere_mise_a_jour;
 		this.modifie_par = modifie_par;

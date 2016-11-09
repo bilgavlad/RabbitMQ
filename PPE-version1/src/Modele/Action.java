@@ -30,16 +30,18 @@ public class Action {
 	private String modifie_par;
 	@Column(nullable = false)
 	private String description;
+	
+	public void addRoleAction(Role_action nouveau) {
+		role_actions.add(nouveau);
+		nouveau.setAction(this);
+	}
 
 	public Action() {
 		super();
 	}
 
-	public Action(int id_action, List<Role_action> role_actions, String action, Date derniere_mise_a_jour,
-			String modifie_par, String description) {
+	public Action(String action, Date derniere_mise_a_jour, String modifie_par, String description) {
 		super();
-		this.id_action = id_action;
-		this.role_actions = role_actions;
 		this.action = action;
 		this.derniere_mise_a_jour = derniere_mise_a_jour;
 		this.modifie_par = modifie_par;

@@ -31,11 +31,8 @@ public class Role_action {
 		super();
 	}
 
-	public Role_action(int id_role_action, Role role, Action action, Date derniere_mise_a_jour, String modifie_par) {
+	public Role_action(Date derniere_mise_a_jour, String modifie_par) {
 		super();
-		this.id_role_action = id_role_action;
-		this.role = role;
-		this.action = action;
 		this.derniere_mise_a_jour = derniere_mise_a_jour;
 		this.modifie_par = modifie_par;
 	}
