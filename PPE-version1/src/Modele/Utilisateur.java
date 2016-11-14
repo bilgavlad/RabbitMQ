@@ -22,11 +22,11 @@ public class Utilisateur {
 	private int id_users;
 	@OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
 	private List<Role_Utilisateur> roles = new ArrayList<>(); 
-	@Column(nullable = false, unique = true)
+	@Column(nullable= false, unique = true)
 	private String email;
-	@Column(nullable = false)
+	@Column(nullable= false)
 	private String nom;
-	@Column(nullable = false)
+	@Column(nullable= false)
 	private String prenom;
 	@Temporal(TemporalType.TIMESTAMP) @Column(nullable = false)
 	private Date derniere_mise_a_jour;
