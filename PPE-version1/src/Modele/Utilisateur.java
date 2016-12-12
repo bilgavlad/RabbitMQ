@@ -18,7 +18,8 @@ import javax.persistence.TemporalType;
 @Entity @Table(name = "Users")
 public class Utilisateur {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_users;
 	@OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
 	private List<Role_Utilisateur> roles = new ArrayList<>(); 

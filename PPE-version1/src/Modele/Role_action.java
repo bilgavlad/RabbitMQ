@@ -16,7 +16,8 @@ import javax.persistence.TemporalType;
 @Entity @Table(name = "role_action")
 public class Role_action {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_role_action;
 	@ManyToOne @JoinColumn(name = "role_FK")
 	private Role role;
